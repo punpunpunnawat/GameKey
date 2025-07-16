@@ -1,20 +1,37 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
+import NavBar from "~/components/NavBar.vue";
 
-const count = ref(0)
+const curStore = ref("steam");
+
+function updateCurStore(newStore) {
+	curStore.value = newStore;
+}
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center">
-    <h1 class="text-4xl font-bold mb-4 text-blue-600">Counter Page</h1>
-    <p class="text-2xl mb-6">You clicked: <span class="font-mono">{{ count }}</span> times</p>
-    <button
-      class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition"
-      @click="count++"
-    >
-      Click Me!
-    </button>
-  </div>
+	<div class="flex flex-row bg-neutral-700">
+		<NavBar :curStore="curStore" @update-cur-store="updateCurStore" />
+		<div
+			class="min-h-screen w-full flex flex-col items-center justify-start text-center text-white"
+		>
+			<div
+				class="flex flex-row w-full h-[400px] bg-rose-500 justify-evenly items-center"
+			>
+				<h1 class="text-8xl">STEAM GAMES</h1>
+				<span
+					>asdasdasddddddddddddddddddddddddd
+					asdasdasddasdasdadasd</span
+				>
+			</div>
+
+      <div class="flex flex-col p-12 g-16">
+			<div>
+				<h2 class="5xl">ALL GAMES</h2>
+				<input />
+			</div>
+		</div>
+		</div>
+		
+	</div>
 </template>
-
-
